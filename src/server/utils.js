@@ -2,6 +2,8 @@ import React from "react";                      //JSX语法，必须要引入rea
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom"; //服务端渲染用的路由
 import Route from "../router/index.js";
+import { Provider } from "react-redux";
+import getStore from "../store";
 
 export const render = (req) => {
   /* 
@@ -10,9 +12,11 @@ export const render = (req) => {
   */
   const content = renderToString(
     (
-      <StaticRouter context={{}} location={req.path}>
-        { Route }
-      </StaticRouter>
+      <Provider store={getStore()}>
+        <StaticRouter context={{}} location={req.path}>
+          { Route }
+        </StaticRouter>
+      </Provider>
     )
   )
   return `<html>

@@ -1,16 +1,19 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-
+import { Provider } from "react-redux";
 //通过路由渲染组件
 import Routes from "../router/index.js";
-//import Home from "../containers/Home";
+
+import getStore from "../store";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      { Routes }
-    </BrowserRouter>
+    <Provider store={getStore()}>
+      <BrowserRouter>
+        { Routes }
+      </BrowserRouter>
+    </Provider>
   )
 }
 //ReactDom.render(<Home />, document.querySelector("#root"));
