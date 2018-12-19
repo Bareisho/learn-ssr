@@ -3,7 +3,7 @@
 * express4.x
 * webpack4
 * babel 7.x
-# 运行
+# 运行(localhost:3000)
 以下三个命令同时运行(run together)  
 `npm run start`  
 `npm run build:server`  
