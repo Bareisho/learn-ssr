@@ -14,10 +14,18 @@ const reducer = combineReducers({
   applyMiddleware(thunk)   //使用thunk中间件
 ) */
 //避免store污染，返回一个函数创建副本
-const getStore = () => {
+export const getStore = () => {
   return createStore(
     reducer,
     applyMiddleware(thunk)   //使用thunk中间件
   )
 }
-export default getStore;
+//客户端数据初始化，以服务端为基准，避免重复的二次请求
+export const getClientStore = () => {
+  //let initialStore = window.context.state;//服务器初始化数据
+  return createStore(
+    reducer,
+    //initialStore,
+    applyMiddleware(thunk)   //使用thunk中间件
+  )
+}

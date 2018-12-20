@@ -6,13 +6,12 @@ import { Provider } from "react-redux";
 //import Route from "../router/index.js"; //修改为一个数组
 import routes from "../router";
 
-import getStore from "../store";
+import { getClientStore } from "../store";
 
 const App = () => {
   return (
-    <Provider store={getStore()}>
+    <Provider store={getClientStore()}>
       <BrowserRouter>
-        { /* 遍历数组，BrowserRouter只能有一个child，用div包裹 */ }
         <div>
           {
             routes.map(route => (

@@ -9,7 +9,7 @@ const changeList = (data) => {
 }
 const actions = () => {
   return (dispatch) => {
-    axios.get("./json/list.json").then((res) => {
+    return axios.get("http://localhost:3000/json/list.json").then((res) => {
       const data = res.data.data;
       dispatch(changeList(data))//action dispatch reducer
     }).catch(err => {
