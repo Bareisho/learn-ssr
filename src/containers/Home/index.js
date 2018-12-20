@@ -37,6 +37,10 @@ class Home extends Component {
     </div>
   )
 } */
+//新增自定义方法获取数据，用于router
+Home.loadData = () => {
+  
+}
 const mapStateToProps = (state) => {
   return {
     list: state.home.list,
