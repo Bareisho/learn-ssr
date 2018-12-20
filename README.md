@@ -3,7 +3,12 @@
 * express4.x
 * webpack4
 * babel 7.x
-* axios, nodemon
+* axios
+## 其他
+nodemon  
+webpack-node-externals  
+react-router-config: 处理嵌套路由) 
+react-redux, redux-thunk
 # 运行(localhost:3000)
 以下三个命令同时运行(run together)  
 `npm run start`  
@@ -29,4 +34,4 @@ add react-router
 add redux, react-redux（客户端）
 ## serverRedux
 增加redux服务端渲染
-更多内容查看各部分代码注释
+更多内容查看代码注释
