@@ -1,12 +1,13 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
-const defaultState = {
-  name: "hello"
-};
-
-const reducer = (state = defaultState, action) => {
-  return state;
-}
+import { reducer as homeReducer } from "../containers/Home/store";
+//拆分各个组件的store，进行模块化处理
+const reducer = combineReducers({
+  home: homeReducer
+})
+// const reducer = (state = defaultState, action) => {
+//   return state;
+// }
 
 /* export const store = createStore(
   reducer,
